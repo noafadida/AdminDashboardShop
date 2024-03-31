@@ -5,7 +5,6 @@ import {
   ColumnDirective,
   Resize,
   Sort,
-  Context,
   Filter,
   Page,
   ExcelExport,

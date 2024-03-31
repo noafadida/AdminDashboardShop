@@ -17,6 +17,7 @@ import {
 } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
 
+
 const LineChart = () => {
   const { currentMode } = useStateContext();
   return (

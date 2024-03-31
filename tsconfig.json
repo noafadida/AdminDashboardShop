@@ -8,6 +8,10 @@
             "dom.iterable",
             "esnext"
         ],
+        "typeRoots": [
+            "node_modules/@types",
+            "src/types"
+        ],
         "module": "esnext",
         "moduleResolution": "bundler",
         "target": "es2015",

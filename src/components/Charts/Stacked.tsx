@@ -16,7 +16,11 @@ import {
   stackedPrimaryYAxis,
 } from "../../data/dummy";
 
-const Stacked = ({ width, height }) => {
+type TStacked = {
+  width?: string;
+  height?: string;
+}
+const Stacked:React.FC<TStacked> = ({ width, height }) => {
   return (
     <ChartComponent
       width={width}

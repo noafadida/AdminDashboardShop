@@ -23,6 +23,8 @@ import {
   BsShield,
   BsChatLeft,
 } from "react-icons/bs";
+
+import { AxisModel, RangeColorSettingModel } from "@syncfusion/ej2-react-charts";
 import { BiColorFill } from "react-icons/bi";
 import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
@@ -42,19 +44,20 @@ import product4 from "./product4.jpg";
 import product5 from "./product5.jpg";
 import product6 from "./product6.jpg";
 import product7 from "./product7.jpg";
-import product8 from "./product8.jpg";
 
-export const gridOrderImage = (props) => (
+type TOrder = {
+  ProductImage: string;
+  Status: string;
+  StatusBg: string;
+};
+
+export const gridOrderImage: React.FC<TOrder> = (props) => (
   <div>
-    <img
-      className="rounded-xl h-20 md:ml-3"
-      src={props.ProductImage}
-      alt="order-item"
-    />
+    <img className="rounded-xl h-20 md:ml-3" src={props.ProductImage} alt="order-item" />
   </div>
 );
 
-export const gridOrderStatus = (props) => (
+export const gridOrderStatus: React.FC<TOrder> = (props) => (
   <button
     type="button"
     style={{ background: props.StatusBg }}
@@ -78,7 +81,14 @@ export const kanbanGrid = [
 
   { headerText: "Done", keyField: "Close", allowToggle: true },
 ];
-const gridEmployeeProfile = (props) => (
+
+type TEmployee = {
+  EmployeeImage: string;
+  Name: string;
+  Country: string;
+};
+
+const gridEmployeeProfile: React.FC<TEmployee> = (props) => (
   <div className="flex items-center gap-2">
     <img
       className="rounded-full w-10 h-10"
@@ -89,7 +99,7 @@ const gridEmployeeProfile = (props) => (
   </div>
 );
 
-const gridEmployeeCountry = (props) => (
+const gridEmployeeCountry: React.FC<TEmployee> = (props) => (
   <div className="flex items-center justify-center gap-2">
     <GrLocation />
     <span>{props.Country}</span>
@@ -141,7 +151,16 @@ export const EditorData = () => (
     </h3>
   </div>
 );
-const customerGridImage = (props) => (
+
+type TCustomer = {
+  CustomerImage: string;
+  CustomerName: string;
+  CustomerEmail: string;
+  StatusBg: string;
+  Status: string;
+};
+
+const customerGridImage: React.FC<TCustomer> = (props) => (
   <div className="image flex gap-4">
     <img
       className="rounded-full w-10 h-10"
@@ -155,7 +174,7 @@ const customerGridImage = (props) => (
   </div>
 );
 
-const customerGridStatus = (props) => (
+const customerGridStatus: React.FC<TCustomer> = (props) => (
   <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
     <p
       style={{ background: props.StatusBg }}
@@ -164,7 +183,8 @@ const customerGridStatus = (props) => (
     <p>{props.Status}</p>
   </div>
 );
-export const areaPrimaryXAxis = {
+
+export const areaPrimaryXAxis: AxisModel = {
   valueType: "DateTime",
   labelFormat: "y",
   majorGridLines: { width: 0 },
@@ -173,7 +193,7 @@ export const areaPrimaryXAxis = {
   labelStyle: { color: "gray" },
 };
 
-export const areaPrimaryYAxis = {
+export const areaPrimaryYAxis: AxisModel = {
   labelFormat: "{value}%",
   lineStyle: { width: 0 },
   maximum: 4,
@@ -182,12 +202,12 @@ export const areaPrimaryYAxis = {
   minorTickLines: { width: 0 },
   labelStyle: { color: "gray" },
 };
-export const barPrimaryXAxis = {
+export const barPrimaryXAxis: AxisModel = {
   valueType: "Category",
   interval: 1,
   majorGridLines: { width: 0 },
 };
-export const barPrimaryYAxis = {
+export const barPrimaryYAxis: AxisModel = {
   majorGridLines: { width: 0 },
   majorTickLines: { width: 0 },
   lineStyle: { width: 0 },
@@ -339,36 +359,36 @@ export const colorMappingData = [
     { x: "Nov", y: 15.5 },
     { x: "Dec", y: 9.9 },
   ],
-  ["#FDFDBD", "#FBF46D"],
-  ["#FFB085", "#FF865E"],
-  ["#FF7D7D", "#FF4040"],
+  // ["#FDFDBD", "#FBF46D"],
+  // ["#FFB085", "#FF865E"],
+  // ["#FF7D7D", "#FF4040"],
 ];
 
-export const rangeColorMapping = [
-  { label: "1°C to 10°C", start: 1, end: 10, colors: colorMappingData[1] },
+export const rangeColorMapping: RangeColorSettingModel[] = [
+  { label: "1°C to 10°C", start: 1, end: 10, colors: ["#FDFDBD", "#FBF46D"], },
 
   {
     label: "11°C to 20°C",
     start: 11,
     end: 20,
-    colors: colorMappingData[2],
+    colors: ["#FFB085", "#FF865E"],
   },
 
   {
     label: "21°C to 30°C",
     start: 21,
     end: 30,
-    colors: colorMappingData[3],
+    colors: ["#FF7D7D", "#FF4040"],
   },
 ];
 
-export const ColorMappingPrimaryXAxis = {
+export const ColorMappingPrimaryXAxis: AxisModel = {
   valueType: "Category",
   majorGridLines: { width: 0 },
   title: "Months",
 };
 
-export const ColorMappingPrimaryYAxis = {
+export const ColorMappingPrimaryYAxis: AxisModel = {
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
@@ -376,7 +396,7 @@ export const ColorMappingPrimaryYAxis = {
   title: "Temperature",
 };
 
-export const FinancialPrimaryXAxis = {
+export const FinancialPrimaryXAxis: AxisModel = {
   valueType: "DateTime",
   minimum: new Date("2016, 12, 31"),
   maximum: new Date("2017, 9, 30"),
@@ -384,7 +404,7 @@ export const FinancialPrimaryXAxis = {
   majorGridLines: { width: 0 },
 };
 
-export const FinancialPrimaryYAxis = {
+export const FinancialPrimaryYAxis:AxisModel = {
   title: "Price",
   minimum: 100,
   maximum: 180,
@@ -393,16 +413,16 @@ export const FinancialPrimaryYAxis = {
   majorTickLines: { width: 0 },
 };
 
-export const LinePrimaryXAxis = {
+export const LinePrimaryXAxis: AxisModel = {
   valueType: "DateTime",
   labelFormat: "y",
   intervalType: "Years",
   edgeLabelPlacement: "Shift",
   majorGridLines: { width: 0 },
-  background: "white",
+  // background: "white",
 };
 
-export const LinePrimaryYAxis = {
+export const LinePrimaryYAxis: AxisModel = {
   labelFormat: "{value}%",
   rangePadding: "None",
   minimum: 0,
@@ -3073,7 +3093,7 @@ export const stackedCustomSeries = [
   },
 ];
 
-export const stackedPrimaryXAxis = {
+export const stackedPrimaryXAxis: AxisModel = {
   majorGridLines: { width: 0 },
   minorGridLines: { width: 0 },
   majorTickLines: { width: 0 },
@@ -3084,7 +3104,7 @@ export const stackedPrimaryXAxis = {
   valueType: "Category",
 };
 
-export const stackedPrimaryYAxis = {
+export const stackedPrimaryYAxis: AxisModel = {
   lineStyle: { width: 0 },
   minimum: 100,
   maximum: 400,

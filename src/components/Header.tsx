@@ -1,6 +1,11 @@
 import React from "react";
 
-const Header = ({ category, title }) => {
+type THeader = {
+  category: string,
+  title:string
+}
+
+const Header:React.FC<THeader> = ({ category, title }) => {
   return (
     <div className="mb-10">
       <p className="text-gray-400">{category}</p>

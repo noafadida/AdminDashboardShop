@@ -21,14 +21,23 @@ import { Header } from "../../components";
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const date1 = new Date("2017,1,1");
+type TValue = {
+  x: Date;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+}
 
-function filterValue(value) {
+
+function filterValue(value: TValue) {
   if (value.x >= date1) {
-    return value.x, value.high, value.low;
+    return (value.x, value.high, value.low)
   }
 }
 
-const returnValue = financialChartData.filter(filterValue);
+const returnValue: TValue[] = financialChartData.filter(filterValue);
 
 const Financial = () => {
   const { currentMode } = useStateContext();

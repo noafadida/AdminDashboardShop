@@ -16,8 +16,8 @@ type TContextObj = {
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
   isClicked: TNavInitialState;
   setIsClicked: React.Dispatch<React.SetStateAction<TNavInitialState>>;
-  screenSize: string | undefined;
-  setScreenSize: React.Dispatch<React.SetStateAction<string | undefined>>;
+  screenSize: number | undefined;
+  setScreenSize: React.Dispatch<React.SetStateAction<number | undefined>>;
   currentColor: string;
   currentMode: string;
   setColor: (color: string) => void;
@@ -39,7 +39,7 @@ const contextInitialState: TContextObj = {
   setActiveMenu: () => { },
   isClicked: navInitialState,
   setIsClicked: () => { },
-  screenSize: '',
+  screenSize: undefined,
   setScreenSize: () => { },
   currentColor: '',
   currentMode: '',
@@ -55,7 +55,7 @@ export const StateContext = createContext<TContextObj>(contextInitialState);
 export const ContextProvider: React.FC<Props> = (props) => {
   const [activeMenu, setActiveMenu] = useState<boolean>(true);
   const [isClicked, setIsClicked] = useState<TNavInitialState>(navInitialState);
-  const [screenSize, setScreenSize] = useState<string | undefined>(undefined);
+  const [screenSize, setScreenSize] = useState<number | undefined>(undefined);
   const [currentColor, setCurrentColor] = useState<string>("#9EDDFF");
   const [currentMode, setCurrentMode] = useState<string>("Light");
   const [themeSettings, setThemeSettings] = useState<boolean>(false);

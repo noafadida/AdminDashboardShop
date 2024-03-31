@@ -12,7 +12,14 @@ import {
 
 import { useStateContext } from "../../contexts/ContextProvider";
 
-const PieChart = ({ id, data, legendVisiblity, height }) => {
+type TPieChart = {
+  id: string;
+  data: Object;
+  legendVisiblity: boolean;
+  height: string
+};
+
+const PieChart: React.FC<TPieChart> = ({ id, data, legendVisiblity, height }) => {
   const { currentMode } = useStateContext();
 
   return (

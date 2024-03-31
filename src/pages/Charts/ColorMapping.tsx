@@ -10,7 +10,7 @@ import {
   ColumnSeries,
   RangeColorSettingsDirective,
   RangeColorSettingDirective,
-  RangeColorSetting,
+  RangeColorSettingModel
 } from "@syncfusion/ej2-react-charts";
 
 import {
@@ -32,7 +32,7 @@ const ColorMapping = () => {
         primaryXAxis={ColorMappingPrimaryXAxis}
         primaryYAxis={ColorMappingPrimaryYAxis}
         chartArea={{ border: { width: 0 } }}
-        legendSettings={{ type: "Range", background: "white" }}
+        legendSettings={{ mode: "Range", background: "white" }}
         tooltip={{ enable: true }}
         background={currentMode === "Dark" ? "#33373E" : "#fff"}
       >
@@ -51,7 +51,7 @@ const ColorMapping = () => {
           />
         </SeriesCollectionDirective>
         <RangeColorSettingsDirective>
-          {rangeColorMapping.map((item, index) => (
+          {rangeColorMapping.map((item: RangeColorSettingModel, index: number) => (
             <RangeColorSettingDirective key={index} {...item} />
           ))}
         </RangeColorSettingsDirective>

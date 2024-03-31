@@ -10,7 +10,15 @@ import avatar2 from "../data/avatar2.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
-const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
+type TNavButton = {
+  title: string,
+  customFunc: React.MouseEventHandler<HTMLButtonElement>,
+  icon: JSX.Element,
+  color: string,
+  dotColor?: string
+}
+
+const NavButton: React.FC<TNavButton> = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
       type="button"
@@ -29,10 +37,8 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const Navbar = () => {
   const {
-    activeMenu,
     setActiveMenu,
     isClicked,
-    setIsClicked,
     handleClick,
     screenSize,
     setScreenSize,
@@ -52,7 +58,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize <= 900) {
+    if (screenSize && screenSize <= 900) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
