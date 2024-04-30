@@ -25,7 +25,7 @@ const PieChart: React.FC<TPieChart> = ({ id, data, legendVisiblity, height }) =>
   return (
     <AccumulationChartComponent
       id={id}
-      legendSettings={{ visible: legendVisiblity, background: "white" }}
+      legendSettings={{ visible: legendVisiblity, background: (currentMode === 'Dark') ? "#B4B4B8" : "#fff",}}
       height={height}
       background={currentMode === "Dark" ? "#33373E" : "#fff"}
       tooltip={{ enable: true }}

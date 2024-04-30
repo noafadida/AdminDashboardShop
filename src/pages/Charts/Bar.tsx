@@ -18,6 +18,7 @@ import {
 } from "../../data/dummy";
 import { Header } from "../../components";
 import { useStateContext } from "../../contexts/ContextProvider";
+import { fontColor } from '@syncfusion/ej2/spreadsheet';
 
 const Bar = () => {
   const { currentMode } = useStateContext();
@@ -28,12 +29,12 @@ const Bar = () => {
         id="charts"
         primaryXAxis={barPrimaryXAxis}
         primaryYAxis={barPrimaryYAxis}
-        chartArea={{ border: { width: 0 } }}
+        chartArea={{ border: { width: 0 },  }}
         tooltip={{ enable: true }}
         background={currentMode === "Dark" ? "#33373E" : "#fff"}
-        legendSettings={{background:'white'}}
+        legendSettings={{ background: (currentMode === 'Dark') ? "#B4B4B8" : "#fff", position:"Bottom"}}
       >
-        <Inject services={[ColumnSeries, Category,Tooltip, DataLabel, Legend]} />
+        <Inject services={[ColumnSeries, Category, Tooltip, DataLabel, Legend]} />
         <SeriesCollectionDirective>
           {barCustomSeries.map((item, index) => (
             <SeriesDirective key={index} {...item} />

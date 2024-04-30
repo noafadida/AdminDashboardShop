@@ -89,7 +89,7 @@ type TEmployee = {
 };
 
 const gridEmployeeProfile: React.FC<TEmployee> = (props) => (
-  <div className="flex items-center gap-2">
+  <div className="flex items-center gap-4 text-center">
     <img
       className="rounded-full w-10 h-10"
       src={props.EmployeeImage}
@@ -404,7 +404,7 @@ export const FinancialPrimaryXAxis: AxisModel = {
   majorGridLines: { width: 0 },
 };
 
-export const FinancialPrimaryYAxis:AxisModel = {
+export const FinancialPrimaryYAxis: AxisModel = {
   title: "Price",
   minimum: 100,
   maximum: 180,
@@ -487,6 +487,7 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
+  { type: "checkbox", width: "50" },
   {
     headerText: "Employee",
     width: "150",

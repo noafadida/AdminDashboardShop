@@ -26,7 +26,7 @@ const Pyramid = () => {
           id="pyramid-chart"
           tooltip={{ enable: true }}
           background={currentMode === "Dark" ? "#33373E" : "#fff"}
-          legendSettings={{ background: "white" }}
+          legendSettings={{ background: (currentMode === 'Dark') ? "#B4B4B8" : "#fff", }}
         >
           <Inject
             services={[
