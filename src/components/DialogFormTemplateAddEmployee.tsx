@@ -6,7 +6,7 @@ type DialogFormTemplateProps = {
     setImagePath: (value: string) => void
 } & TEmployee;
 
-const DialogFormTemplate = (props: DialogFormTemplateProps) => {
+const DialogFormTemplateAddEmployee = (props: DialogFormTemplateProps) => {
     const onFileSelect = async (args: SelectedEventArgs) => {
         const file = args.filesData[0].rawFile; // Assuming only one file is selected
         const formData = new FormData();
@@ -33,4 +33,4 @@ const DialogFormTemplate = (props: DialogFormTemplateProps) => {
     )
 };
 
-export default DialogFormTemplate;
+export default DialogFormTemplateAddEmployee;

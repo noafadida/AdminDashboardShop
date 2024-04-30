@@ -17,7 +17,7 @@ import {
 import { employeesData, employeesGrid } from "../data/dummy";
 import { Header } from "../components";
 import axios from 'axios';
-import DialogFormTemplate from '../components/DialogFormTemplate';
+import DialogFormTemplateAddEmployee from '../components/DialogFormTemplateAddEmployee';
 
 
 export type TEmployee = {
@@ -38,7 +38,7 @@ const Employees = () => {
     const toolbarOptions: ToolbarItems[] = ['Add', 'Search', 'Delete',]
 
     function dialogTemplate(props: TEmployee,) {
-        return (<DialogFormTemplate setImagePath={(value: string) => setImagePath(value)} {...props} />)
+        return (<DialogFormTemplateAddEmployee setImagePath={(value: string) => setImagePath(value)} {...props} />)
     }
 
     useEffect(() => {
