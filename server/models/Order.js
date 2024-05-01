@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
-    OrderID: {
+  OrderID: {
     type: Number,
     require: true,
   },
@@ -9,7 +9,7 @@ const OrderSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  TotalAmount: {
+  Price: {
     type: String,
     require: true,
   },
@@ -24,13 +24,13 @@ const OrderSchema = new mongoose.Schema({
   StatusBg: {
     type: String,
     require: true,
-    },
-    Location: {
-        type: String,
-        require: true,
-    },
-    
-    ProductImage: {
+  },
+  Location: {
+    type: String,
+    require: true,
+  },
+
+  ProductImage: {
     type: String,
     require: true,
   },

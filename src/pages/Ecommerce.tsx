@@ -13,11 +13,11 @@ const Ecommerce = () => {
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
-          <div className="flex justify-between items-center">
+        <div className="bg-white dark:text-gray-100 dark:bg-secondary-dark-bg h-48 rounded-xl w-96 lg:w-400 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center  ">
+          <div className="flex justify-between">
             <div>
-              <p className="font-bold text-gray-400">Shop</p>
-              <p className="text-2xl">$62,254.55</p>
+              <p className="font-semibold text-gray-400">MY SHOP</p>
+              <p className="text-xl text-gray-300">$62,254.55</p>
             </div>
           </div>
           <div className="mt-6">

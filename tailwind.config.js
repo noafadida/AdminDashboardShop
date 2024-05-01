@@ -39,7 +39,8 @@ module.exports = {
         590: "590px",
       },
       backgroundImage: {
-        'hero-pattern': "url('file:///C:/Users/noafadida/Documents/GitHub/ReactAdminDashboardApp/my-react-app/src/data/welcome-bg.svg')",
+        'hero-pattern': "url('file:///C:/Users/noafadida/Documents/GitHub/ReactAdminDashboardApp/my-react-app/src/data/homebackground.jpg')",
+        
       },
     },
   },

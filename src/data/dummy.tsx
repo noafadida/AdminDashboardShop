@@ -865,28 +865,21 @@ export const medicalproBranding = {
 
 export const themeColors = [
   {
+    name: "black-theme",
+    color: "#080202",
+  },
+  {
+    name: "beigh-theme",
+    color: "#E3E1D9",
+  },
+  {
     name: "blue-theme",
-    color: "#9EDDFF",
+    color: "#AED2FF",
   },
+
   {
-    name: "green-theme",
-    color: "#96E9C6",
-  },
-  {
-    name: "purple-theme",
-    color: "#ECC5FB",
-  },
-  {
-    name: "red-theme",
-    color: "#FFA1CF",
-  },
-  {
-    name: "indigo-theme",
-    color: "#1E4DB7",
-  },
-  {
-    color: "#FFB996",
-    name: "orange-theme",
+    color: "#FFD2D7",
+    name: "pink-theme",
   },
 ];
 
@@ -935,8 +928,8 @@ export const ordersGrid = [
     textAlign: "Center",
   },
   {
-    field: "TotalAmount",
-    headerText: "Total Amount",
+    field: "Price",
+    headerText: "Price",
     format: "C2",
     textAlign: "Center",
     editType: "numericedit",

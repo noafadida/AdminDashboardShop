@@ -7,7 +7,7 @@ router.post("/add-order", async (req, res) => {
     const newOrder = new Order({
       OrderID: req.body.OrderID,
       CustomerName: req.body.CustomerName,
-      TotalAmount: req.body.TotalAmount,
+      Price: req.body.Price,
       OrderItems: req.body.OrderItems,
       Status: req.body.Status,
       StatusBg: req.body.StatusBg,

@@ -44,8 +44,6 @@ app.get("/uploads/:filename", (req, res) => {
 });
 app.get("/products/:filename", (req, res) => {
   const filename = req.params.filename;
-  console.log("fffff")
-  console.log(req.params.filename);
   res.sendFile(
     `C:/Users/noafadida/Documents/GitHub/ReactAdminDashboardApp/my-react-app/src/data/products/${filename}`
   );

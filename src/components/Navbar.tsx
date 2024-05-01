@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FiShoppingCart } from "react-icons/fi";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import avatar2 from "../data/avatar2.jpg";
-import { Cart, Chat, Notification, UserProfile } from ".";
+import { Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
 type TNavButton = {
@@ -75,21 +74,15 @@ const Navbar = () => {
       />
       <div className="flex">
         <NavButton
-          title="Cart"
-          customFunc={() => handleClick("cart")}
-          color={currentColor}
-          icon={<FiShoppingCart />}
-        />
-        <NavButton
           title="Chat"
-          dotColor="#03C9D7"
+          dotColor={currentColor}
           customFunc={() => handleClick("chat")}
           color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notifications"
-          dotColor="#03C9D7"
+          dotColor={currentColor}
           customFunc={() => handleClick("notification")}
           color={currentColor}
           icon={<RiNotification3Line />}
@@ -103,7 +96,7 @@ const Navbar = () => {
             <p>
               <span className="text-gray-400 text-14"> Hi, </span>
               {""}
-              <span className="text-gray-400 font-bold ml-1 text-14">
+              <span className="text-gray-400 ml-1 text-14">
                 {" "}
                 Noa{" "}
               </span>
@@ -111,7 +104,6 @@ const Navbar = () => {
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>
-        {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
         {isClicked.notification && <Notification />}
         {isClicked.userProfile && <UserProfile />}

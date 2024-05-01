@@ -31,7 +31,7 @@ export type TOrder = {
   CustomerName: {
     type: string,
   },
-  TotalAmount: {
+  Price: {
     type: string,
   },
   OrderItems: {
@@ -56,7 +56,7 @@ const Orders = () => {
   const [imagePath, setImagePath] = useState<string>('');
   const [imageName, setImageName] = useState<string>('');
   const [colorStatus, setColorStatus] = useState<string>('');
-  const [totalAmount, setTotalAmount] = useState<string>('');
+  const [price, setPrice] = useState<string>('');
 
   const editOptions: EditSettingsModel = {
     allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true, headerTemplate: 'Add New Order' // Change this to the desired title
@@ -70,7 +70,7 @@ const Orders = () => {
         setProductName={(value: string) => setImageName
           (value)}
         setColorStatus={(value: string) => setColorStatus(value)}
-        setTotalAmount={(value: string) => setTotalAmount(value)}
+        setPrice={(value: string) => setPrice(value)}
         {...props} />)
   }
 
@@ -85,7 +85,7 @@ const Orders = () => {
       }
     };
     fetchOrders();
-  }, [orders, imagePath, colorStatus, imageName, totalAmount]);
+  }, [orders, imagePath, colorStatus, imageName, price]);
 
   async function actionComplete(args: SaveEventArgs | DeleteEventArgs): Promise<void> {
     try {
@@ -94,7 +94,7 @@ const Orders = () => {
         OrderItems: imageName,
         ProductImage: imagePath,
         StatusBg: colorStatus,
-        TotalAmount: totalAmount
+        Price: price
       }
       if (args.requestType === 'save') {
         const resData: any = await axios.post("http://localhost:5000/api/orders/add-order", data)

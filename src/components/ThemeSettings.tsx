@@ -11,7 +11,7 @@ const ThemeSettings = () => {
     useStateContext();
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
-      <div className="float-right h-screen dark:text-gray-200 bg-white dark:[#484B52] w-400">
+      <div className="float-right h-screen dark:text-gray-200 bg-neutral-100 dark:bg-[#31363F] w-400">
         <div className="flex justify-between items-center p-4 ml-4">
           <p className="font-semibold text-xl">Settings</p>
           <button
@@ -73,9 +73,8 @@ const ThemeSettings = () => {
                     onClick={() => setColor(item.color)}
                   >
                     <BsCheck
-                      className={`ml-2 text-2xl text-white ${
-                        item.color === currentColor ? "block" : "hidden"
-                      } `}
+                      className={`ml-2 text-2xl text-white ${item.color === currentColor ? "block" : "hidden"
+                        } `}
                     />
                   </button>
                 </div>

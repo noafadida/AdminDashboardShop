@@ -17,19 +17,19 @@ type DialogFormTemplateProps = {
     setColorStatus: (value: string) => void
     setProductPath: (value: string) => void
     setProductName: (value: string) => void
-    setTotalAmount: (value: string) => void
+    setPrice: (value: string) => void
 } & TOrder;
 
 export const productsData: { [key: string]: Object }[] = [
-    { id: 'Iphone15pink', name: 'Iphone 15 Pro Pink', img: Iphone15pink, totalAmount: '$1313' },
-    { id: 'Iphone15blue', name: 'Iphone 15 Pro Blue', img: Iphone15blue, totalAmount: '$1313' },
-    { id: 'Iphone15black', name: 'Iphone 15 Pro Black', img: Iphone15black, totalAmount: '$1313' },
-    { id: 'IpadPro', name: 'Ipad Pro', img: IpadPro, totalAmount: '$1272' },
-    { id: 'Airpods', name: 'Airpods', img: Airpods, totalAmount: '$189' },
-    { id: 'AirpodsMaxsilver', name: 'Airpods Max Silver', img: AirpodsMaxsilver, totalAmount: '$616' },
-    { id: 'AppleWatchblack', name: 'Apple Watch Black', img: AppleWatchblack, totalAmount: '$299' },
-    { id: 'AppleWatchwhite', name: 'Apple Watch White', img: AppleWatchwhite, totalAmount: '$299' },
-    { id: 'AppleWatchbeigh', name: 'Apple Watch Beighe', img: AppleWatchbeigh, totalAmount: '$299' },
+    { id: 'Iphone15pink', name: 'Iphone 15 Pro Pink', img: Iphone15pink, price: '$1313' },
+    { id: 'Iphone15blue', name: 'Iphone 15 Pro Blue', img: Iphone15blue, price: '$1313' },
+    { id: 'Iphone15black', name: 'Iphone 15 Pro Black', img: Iphone15black, price: '$1313' },
+    { id: 'IpadPro', name: 'Ipad Pro', img: IpadPro, price: '$1272' },
+    { id: 'Airpods', name: 'Airpods', img: Airpods, price: '$189' },
+    { id: 'AirpodsMaxsilver', name: 'Airpods Max Silver', img: AirpodsMaxsilver, price: '$616' },
+    { id: 'AppleWatchblack', name: 'Apple Watch Black', img: AppleWatchblack, price: '$299' },
+    { id: 'AppleWatchwhite', name: 'Apple Watch White', img: AppleWatchwhite, price: '$299' },
+    { id: 'AppleWatchbeigh', name: 'Apple Watch Beighe', img: AppleWatchbeigh, price: '$299' },
 
 ]
 
@@ -53,7 +53,7 @@ const DialogFormTemplateAddOrder = (props: DialogFormTemplateProps) => {
         console.log(args.itemData)
         props.setProductPath(path)
         props.setProductName(args.itemData.name)
-        props.setTotalAmount(args.itemData.totalAmount)
+        props.setPrice(args.itemData.price)
     }
 
     function itemStatusTemplate(data: any) {
