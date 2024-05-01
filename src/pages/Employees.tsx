@@ -34,7 +34,7 @@ const Employees = () => {
     const [employees, setEmployees] = useState<TEmployee[]>([]);
     const [imagePath, setImagePath] = useState<string>('');
 
-    const editOptions: EditSettingsModel = { allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true, };
+    const editOptions: EditSettingsModel = { allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true,headerTemplate: 'Add New Employee'  };
     const toolbarOptions: ToolbarItems[] = ['Add', 'Search', 'Delete',]
 
     function dialogTemplate(props: TEmployee,) {

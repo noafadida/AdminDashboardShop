@@ -42,13 +42,11 @@ const DialogFormTemplateAddCustomer = (props: DialogFormTemplateProps) => {
         <div className='form' >
             <div className='form-row'>
                 <div className='form-group col-md-6 w-80' >
-                    <TextBoxComponent type='Number' id='CustomerID' placeholder='Customer ID' floatLabelType='Auto' />
+                    <TextBoxComponent type='number' id='CustomerID' placeholder='Customer ID' floatLabelType='Auto' className='noSpinArrows'/>
                     <TextBoxComponent id='CustomerName' placeholder='Name' floatLabelType='Auto' />
                     <TextBoxComponent id='CustomerEmail' placeholder='Email' floatLabelType='Auto' />
                     <TextBoxComponent id='ProjectName' placeholder='Project Name' floatLabelType='Auto' />
-                    {/* <TextBoxComponent id='Status' placeholder='Status' floatLabelType='Auto' /> */}
                     <ComboBoxComponent id='Status' dataSource={statusData} fields={fields} placeholder='Status' itemTemplate={itemTemplate.bind(this)} select={onStatusSelect} />
-                    {/* <TextBoxComponent id='StatusBg' placeholder='StatusBg' floatLabelType='Auto' /> */}
                     <TextBoxComponent id='Weeks' placeholder='Weeks' floatLabelType='Auto' />
                     <TextBoxComponent id='Budget' placeholder='Budget' floatLabelType='Auto' />
                     <TextBoxComponent id='Location' placeholder='Location' floatLabelType='Auto' />

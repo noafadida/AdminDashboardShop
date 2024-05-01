@@ -20,7 +20,7 @@ const DialogFormTemplateAddEmployee = (props: DialogFormTemplateProps) => {
         <div className='form' >
             <div className='form-row'>
                 <div className='form-group col-md-6 w-80' >
-                    <TextBoxComponent type='Number' value={props.EmployeeID} id='EmployeeID' placeholder='Employee ID' floatLabelType='Auto' />
+                    <TextBoxComponent type='number' value={props.EmployeeID} id='EmployeeID' placeholder='Employee ID' floatLabelType='Auto' className='noSpinArrows' />
                     <TextBoxComponent id='Name' value={props.Name} placeholder='Name' floatLabelType='Auto' />
                     <TextBoxComponent id='Title' value={props.Title} placeholder='Title' floatLabelType='Auto' />
                     <TextBoxComponent id='HireDate' value={props.HireDate} placeholder='Hire Date' floatLabelType='Auto' />

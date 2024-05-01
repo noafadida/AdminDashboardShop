@@ -3,7 +3,6 @@ const Order = require("../models/Order");
 const router = Router();
 
 router.post("/add-order", async (req, res) => {
-    console.log(req.body.ProductImage)
   try {
     const newOrder = new Order({
       OrderID: req.body.OrderID,

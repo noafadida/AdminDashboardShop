@@ -32,7 +32,7 @@ export type TOrder = {
     type: string,
   },
   TotalAmount: {
-    type: Number,
+    type: string,
   },
   OrderItems: {
     type: String,
@@ -56,17 +56,27 @@ const Orders = () => {
   const [imagePath, setImagePath] = useState<string>('');
   const [imageName, setImageName] = useState<string>('');
   const [colorStatus, setColorStatus] = useState<string>('');
+  const [totalAmount, setTotalAmount] = useState<string>('');
 
-  const editOptions: EditSettingsModel = { allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true, };
+  const editOptions: EditSettingsModel = {
+    allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true, headerTemplate: 'Add New Order' // Change this to the desired title
+  };
   const toolbarOptions: ToolbarItems[] = ['Add', 'Search', 'Delete',]
 
   function dialogTemplate(props: TOrder,) {
-    return (<DialogFormTemplate setProductPath={(value: string) => setImagePath(value)} setColorStatus={(value: string) => setColorStatus(value)} setProductName={(value:string)=>setImageName(value)} {...props} />)
+    return (
+      <DialogFormTemplate
+        setProductPath={(value: string) => setImagePath(value)}
+        setProductName={(value: string) => setImageName
+          (value)}
+        setColorStatus={(value: string) => setColorStatus(value)}
+        setTotalAmount={(value: string) => setTotalAmount(value)}
+        {...props} />)
   }
 
   useEffect(() => {
     const fetchOrders = async () => {
-      if (!orders || orders.length === 0  ) {
+      if (!orders || orders.length === 0) {
         const { data } = await axios.get(
           "http://localhost:5000/api/orders/all-orders"
         );
@@ -75,15 +85,16 @@ const Orders = () => {
       }
     };
     fetchOrders();
-  }, [orders, imagePath, colorStatus, imageName]);
+  }, [orders, imagePath, colorStatus, imageName, totalAmount]);
 
   async function actionComplete(args: SaveEventArgs | DeleteEventArgs): Promise<void> {
     try {
       const data = {
         ...args.data,
-        OrderItems:imageName,
+        OrderItems: imageName,
         ProductImage: imagePath,
-        StatusBg: colorStatus
+        StatusBg: colorStatus,
+        TotalAmount: totalAmount
       }
       if (args.requestType === 'save') {
         const resData: any = await axios.post("http://localhost:5000/api/orders/add-order", data)

@@ -59,7 +59,7 @@ const Customers = () => {
   const [imagePath, setImagePath] = useState<string>('');
   const [colorStatus, setColorStatus] = useState<string>('');
 
-  const editOptions: EditSettingsModel = { allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true, allowEditing: true };
+  const editOptions: EditSettingsModel = { allowAdding: true, mode: 'Dialog', template: dialogTemplate, allowDeleting: true, allowEditing: true , headerTemplate: 'Add New Customer' };
   const toolbarOptions: ToolbarItems[] = ['Add', 'Search', 'Delete',]
 
   function dialogTemplate(props: TCustomer,) {
