@@ -102,6 +102,7 @@ const Customers = () => {
       console.error(error)
     } finally {
       setImagePath('')
+      setColorStatus('')
     }
   };
   return (

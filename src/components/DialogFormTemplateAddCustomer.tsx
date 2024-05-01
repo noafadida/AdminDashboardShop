@@ -13,7 +13,7 @@ const DialogFormTemplateAddCustomer = (props: DialogFormTemplateProps) => {
         { status: 'Pending', color: "#FFBB70" },
         { status: 'Active', color: "#8BE78B" },
         { status: 'Completed', color: "#A3D8FF" },
-        { status: 'Cancel', color: "#FA7070" }]
+        { status: 'Canceled', color: "#FA7070" }]
 
     const fields: object = { text: 'status', value: 'status', };
 
@@ -31,9 +31,11 @@ const DialogFormTemplateAddCustomer = (props: DialogFormTemplateProps) => {
     }
 
     function itemTemplate(data: any) {
-        return (<span><span className='status m-4'>{data.status}</span>
-            <button className='statusbg h-3 w-3 rounded-full' style={{ backgroundColor: data.color }}>
-            </button></span>);
+        return (<span>
+             <button className='statusbg h-3 w-3 rounded-full' style={{ backgroundColor: data.color }}>
+            </button>
+            <span className='status m-4'>{data.status}</span>
+           </span>);
     }
 
     return (
