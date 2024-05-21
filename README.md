@@ -1,7 +1,7 @@
 ### React Admin Dashboard Application
 React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More.
 
-#### Admin dashboard app using React.js Syncfusion and Mongodb.
+#### Admin dashboard app using React.js, TypeScript, Syncfusion and Mongodb.
 
 
 ![HomePage](https://github.com/noafadida/AdminDashboardShop/assets/82596988/497ccefb-cba1-41f4-b9f6-63994ada45a3)
